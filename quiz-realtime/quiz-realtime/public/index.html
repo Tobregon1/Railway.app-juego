@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quiz en vivo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Quiz Interactivo</h1>
+      <div id="status">Conectando...</div>
+    </header>
+
+    <section id="joinSection" class="card">
+      <label>Tu nombre:
+        <input id="nameInput" placeholder="Ej: Tob1n" />
+      </label>
+      <button id="joinBtn">Entrar al juego</button>
+    </section>
+
+    <section id="quizSection" class="card hidden">
+      <div id="questionBox"></div>
+      <div id="optionsBox"></div>
+      <div class="controls">
+        <button id="nextBtn" class="hidden">Siguiente</button>
+        <button id="finishBtn" class="hidden">Terminar</button>
+      </div>
+      <div id="feedback"></div>
+    </section>
+
+    <section id="leaderboard" class="card">
+      <h3>Leaderboard (en vivo)</h3>
+      <ul id="leaderList"></ul>
+    </section>
+
+    <section id="resultsSection" class="card hidden">
+      <h2>Resultados</h2>
+      <div id="yourResult"></div>
+      <h3>Todos los resultados (finalizados)</h3>
+      <table id="resultsTable">
+        <thead><tr><th>Nombre</th><th>Puntaje</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <footer>
+      <small>Abre la misma URL desde cualquier dispositivo. Demo simple — para producción lee las notas.</small>
+    </footer>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
